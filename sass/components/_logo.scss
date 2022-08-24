@@ -1,0 +1,32 @@
+.logo {
+  @include link;
+  display: block;
+
+  font-family: $secondary-font-family;
+  @include font(24px, 700, 1.16, 0.03em);
+  color: getColor('logoText');
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 93px;
+
+    font-size: 26px;
+    line-height: 1.19;
+  }
+
+  &__accent {
+    color: getColor('brand');
+  }
+
+  &--footer {
+    margin-right: 0;
+    margin-bottom: 20px;
+
+    &__text {
+      color: getColor('secondaryBrand');
+    }
+  }
+}

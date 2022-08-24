@@ -1,0 +1,35 @@
+@mixin list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  // overflow: hidden;
+}
+
+@mixin link() {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin img() {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin centeredFlex($type: flex) {
+  display: $type;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexWrap() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin font($fs, $fw, $lh, $ls) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+}

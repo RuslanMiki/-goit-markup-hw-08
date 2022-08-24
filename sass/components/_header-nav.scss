@@ -1,0 +1,54 @@
+.site-nav {
+  @media screen and (max-width: $pre_tablet) {
+    display: none;
+  }
+
+  @include list;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+
+  &__item + &__item {
+    margin-left: 50px;
+  }
+}
+
+.site-nav__link {
+  @include link;
+
+  position: relative;
+
+  @include font(14px, 500, 1.14, 0.02em);
+
+  color: getColor('mainText');
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: getColor('brand');
+  }
+
+  &--current {
+    color: getColor('brand');
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -37px;
+      left: 0;
+
+      display: block;
+      height: 4px;
+      width: 100%;
+
+      border-radius: 2px;
+      background-color: getColor('brand');
+
+      @media screen and (min-width: $desktop) {
+        bottom: -32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.peculiarity {
+  &__list {
+    @include list();
+
+    @media screen and (min-width: $tablet) {
+      @include flexWrap();
+      margin: -15px;
+    }
+  }
+
+  &__item {
+    @media screen and (max-width: $pre_tablet) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      flex-basis: calc((100% - 60px) / 2);
+      margin: 15px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      flex-basis: calc((100% - 120px) / 4);
+    }
+  }
+
+  &__box {
+    @include centeredFlex();
+    width: 100%;
+    height: 120px;
+    margin-bottom: 30px;
+    background-color: getColor('secondaryBgr');
+    border-radius: 4px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    @include font(14px, 700, 1.14, 0.03em);
+
+    text-transform: uppercase;
+    color: getColor('mainText');
+
+    @media screen and (max-width: $pre_tablet) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    @include font(14px, 400, 1.72, 0.03em);
+
+    color: getColor('secondaryText');
+  }
+}

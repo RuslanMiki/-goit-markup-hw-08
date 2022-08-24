@@ -1,0 +1,52 @@
+.footer__address {
+  @include font(14px, 400, 1.72, 0.03em);
+
+  @media screen and (max-width: $pre_tablet) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $pre_desktop) {
+    margin-right: 165px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 70px;
+  }
+
+  &-meta {
+    margin-bottom: 8px;
+    font-style: normal;
+    color: getColor('secondaryBrand');
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: getColor('brand');
+      cursor: pointer;
+    }
+  }
+}
+
+.footer__contact {
+  &-list {
+    @include list;
+  }
+
+  &-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &-link {
+    @include link;
+    color: getColor('footerContacts');
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: getColor('brand');
+      cursor: pointer;
+    }
+  }
+}

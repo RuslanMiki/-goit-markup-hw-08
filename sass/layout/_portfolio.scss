@@ -1,0 +1,44 @@
+/* секция фильтр */
+
+.portfolio__filter-list {
+  @include list;
+  @include flexWrap();
+  margin-bottom: 40px;
+
+  @media screen and (max-width: $pre_tablet) {
+    margin-right: -8px;
+    margin-top: -15px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
+
+  &-item {
+    @media screen and (max-width: $pre_tablet) {
+      margin-right: 8px;
+      margin-top: 15px;
+    }
+
+    &:not(:last-child) {
+      @media screen and (min-width: $tablet) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* проекты */
+
+.portfolio__projects-list {
+  @include list;
+
+  @media screen and (min-width: $tablet) {
+    @include flexWrap();
+  }
+}
